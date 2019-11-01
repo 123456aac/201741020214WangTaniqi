@@ -1,0 +1,81 @@
+import sqlite3
+
+def create_mobile():
+     conn =sqlite3.connect('mobile.db')
+     cur =conn.cursor()
+     cur.execute('CREATE TABLE IF NOT EXISTS computer(item TEXT,quantity INT, price REAL)')
+     conn.commit()
+     conn.colse()
+
+
+def insert_item(item, quantity, price):
+     conn =sqlite3.connect('computer.db')
+     cur =conn.cursor()
+     cur.execute('INSERT INTO computer VALUES(?, ?, ?)', (item,quantity,price)
+     conn.commit()
+     conn.colse()
+
+
+     def view_all():
+       conn =sqlite3.connect('mobile.db')
+       cur =conn.cursor()
+        cur.execute('SELECT * FROM mobile')
+        rows = cur.fectchall()
+        conn.colse()
+        return rows
+
+    def search(item);
+       conn =sqlite3.connect('computer.db')
+       cur =conn.cursor()
+       cur.execute('SELECT * FROM mobile WHERE item LIKE ?',(item+'%',))
+       #one = cur.fetchone()
+        rows = cur.fetchall()
+         conn.colse()
+       return rows
+
+def update_one(item, quantity, price):
+       conn =sqlite3.connect('computer.db')
+       cur =conn.cursor()
+       cur.execute("UPDATE computer SET quantity = ?,price=? WHERE item=?',(quantity,price,item))
+       conn.comit()
+       conn.close()
+
+def remove_one(item):
+       conn =sqlite3.connect('computer.db')
+       cur =conn.cursor()
+       cur.execute('DELETE FROM computer WHERE item=?', (item,))
+      conn.commit()
+      conn.colse()
+
+   if_name_=="_main_":
+   #insert_item('Realme X2 pro', 8, 2899)
+   #insert_item('iphone11 pro Max',8,10999)
+   #remove_one('Mate30 pro')
+   #update_one('iPhone11', 100, 4000)
+   #print(view_all())
+   print(search(lenovo'))
+       
+import sqlite3
+
+def create_db():
+    conn = sqlite3.connect('car.db')
+    cur = conn.cursor()
+    cur.execute('CREATE TABLE IF NOT EXISTS car(name TEXT,)')
+    conn.commit()
+    conn.colse()
+
+  def insert_car(name, img, score):
+        conn = sqlite3.connect('car.db')
+        cur = conn.cursor()
+        cur.execute('INSERT INTO car VALUES(?,?,?),name,img,)
+        conn.commit()
+        conn.colse()
+
+    def view_all():
+            conn = sqlite3.connect('car.db')
+            cur = conn.cursor()
+            ]cur.excute('SELECT * from car')
+            conn.commit()
+            conn.close()
+            
+
