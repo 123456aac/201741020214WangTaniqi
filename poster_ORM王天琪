@@ -1,0 +1,40 @@
+
+om sqlalchemy import create_engine
+from sqlalchemy.exe.declarative import declarative_base
+from sqlalchemy import Column
+from sqlalchemy.orm import sessionmaker
+Base = declarative_base()
+engine = create_engine('postgresql://puser:wangke521@localhost/pdb')
+session = sessionmaker(bind=engine)
+session = Session()
+
+class Houses(Base):
+_tablename_ = 'houses'
+id = Column(Integer,primary_key=True)
+name = Column (string(20))
+position= Column(TEXT)
+price= Column(Folat)
+
+def_repr_(self):
+return"<Houses(name='%s',price ='%f')>" % (self.name,self.price)
+
+def inserHouse(houses):
+for house in houses:
+    try:
+c=Houses(name=house['name'],position=car['position'],price=float(house['price']))
+except ValueError
+c=Houses(name=house['name'],position=car['position'],=0)
+ session.add(c)
+session.commit()
+
+if _name_=='__main__':
+Base.metadate.create_all(engine)
+
+
+
+session.add(c)
+session.commit()
+
+if _name_=='__main__':
+Base.metadate.create_all(engine)
+
